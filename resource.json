@@ -6,15 +6,7 @@
     {"tag": "plasma",
      "patterns": ["plasma"],
      "responses": ["https://dhoondh.com/"]
-    },
-    {"tag": "beds",
-        "patterns": ["bed","hosipital","oxygen beds","hospital bed","bed with oxygen"],
-        "responses": ["https://dhoondh.com/"]
-    },
-    {"tag": "medicine",
-        "patterns": ["plasma"],
-        "responses": ["https://dhoondh.com/"]
     }
-
+    
 ]
 }
