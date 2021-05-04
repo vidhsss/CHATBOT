@@ -1,22 +1,22 @@
 {"intents": [
     {"tag": "oxygen",
-     "patterns": ["oxygen","oxygen cylinder","oxygen concentration"],
+     "patterns": ["oxygen","oxygen cylinder","oxygen concentration","i need oxygen cylinder","i require oxygen in delhi","i need concentrator"],
      "responses": ["https://covidfightclub.org/"]
     },
     {"tag": "plasma",
-     "patterns": ["plasma"],
+     "patterns": ["plasma","plasma donor needed","plasma needed","O+ plasma donor","A+ plasma donor","B+ plasma donor","plasma donor required"],
      "responses": ["https://dhoondh.com/ and https://plasmadonor.in/"]
     },
     {"tag": "beds",
-        "patterns": ["beds","oxygen beds","hospital","hospital beds"],
+        "patterns": ["i require beds","i need oxygen beds","hospital nearby","hospital beds needed in delhi"],
         "responses": ["https://covidamd.com/"]
     },
     {"tag": "ambulance",
-        "patterns": ["ambulance service","ambulance with oxygen","ambulance with converter"],
+        "patterns": ["ambulance service needed","ambulance with oxygen required in delhi","ambulance with converter","ambulance with oxygen required"],
         "responses": ["https://warwithcovid.club/search?q=ambulance"]
     },
     {"tag": "vaccination",
-        "patterns": ["ambulance service","ambulance with oxygen","ambulance with converter"],
+        "patterns": ["vaccination details","vaccination slot","when can i get vaccinated"],
         "responses":["https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html"]
     },
     {"tag": "medicine",

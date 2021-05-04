@@ -34,7 +34,7 @@ h3 {
 #textInput {
     width: 87%;
     border: none;
-    border-bottom: 3px solid #926db4;
+    border-bottom: 3px solid #b28dd4;
     font-family: monospace;
     font-size: 17px;
 }
@@ -54,14 +54,14 @@ h3 {
 }
 
 .userText span {
-    background-color: #7761f3;
+    background-color: #7e92ec;
     padding: 10px;
     border-radius: 2px;
 }
 
 .botText {
     color: white;
-    background-color:rgb(136, 175, 207);
+    /* background-color:rgb(182, 156, 235); */
     font-family: monospace;
     font-size: 17px;
     text-align: left;
@@ -69,7 +69,7 @@ h3 {
 }
 
 .botText span {
-    background-color:rgb(115, 137, 155);
+    background-color:rgba(137, 138, 223, 0.589);
     padding: 10px;
     border-radius: 2px;
 }
