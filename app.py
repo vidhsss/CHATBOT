@@ -1,4 +1,4 @@
-from chat import chat
+from chat1 import chatbot_response
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -11,7 +11,9 @@ def home():
 @app.route("/get")
 def get_bot_response():
     UserTxt=request.args.get('msg')
-    return chat(UserTxt)
+    resp=chatbot_response(UserTxt)
+    return str(resp)
+   
 
 if __name__ == "__main__":
     app.run()

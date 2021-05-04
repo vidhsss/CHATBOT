@@ -11,17 +11,9 @@
      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
      "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
     },
-    {"tag": "about",
-     "patterns": ["Who are you?", "What are you?", "Who you are?" ],
-     "responses": ["I.m Joana, your bot assistant", "I'm Joana, an Artificial Intelligent bot"]
-    },
-    {"tag": "name",
-    "patterns": ["what is your name", "what should I call you", "whats your name?"],
-    "responses": ["You can call me Joana.", "I'm Joana!", "Just call me as Joana"]
-    },
-
+    
     {"tag": "demand",
-    "patterns": ["I need ", "i request", "oxygen is needed", "wanted","i need","i want"],
+    "patterns": ["I need ", "i request", "oxygen is needed", "wanted","i need","i want","oxygen","oxygen cylinder","ambulance","plasma","vaccine","required"],
     "responses": ["Please go through these sites: "]
     }
     

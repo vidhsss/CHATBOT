@@ -5,8 +5,25 @@
     },
     {"tag": "plasma",
      "patterns": ["plasma"],
-     "responses": ["https://dhoondh.com/"]
+     "responses": ["https://dhoondh.com/ and https://plasmadonor.in/"]
+    },
+    {"tag": "beds",
+        "patterns": ["beds","oxygen beds","hospital","hospital beds"],
+        "responses": ["https://covidamd.com/"]
+    },
+    {"tag": "ambulance",
+        "patterns": ["ambulance service","ambulance with oxygen","ambulance with converter"],
+        "responses": ["https://warwithcovid.club/search?q=ambulance"]
+    },
+    {"tag": "vaccination",
+        "patterns": ["ambulance service","ambulance with oxygen","ambulance with converter"],
+        "responses":["https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html"]
+    },
+    {"tag": "medicine",
+        "patterns": ["Fabiflu","Ivermectin","doxy", "olumiant", "medicine","injection"],
+        "responses":["https://docs.google.com/spreadsheets/d/17bc83Sjnakb5DgsEQ7-lRj30-JVrIjSCcQuvwxB4Bc0/edit#gid=1864596547"]
+
     }
-    
 ]
+
 }
