@@ -8,7 +8,7 @@ Click==7.0
 
 gunicorn==19.9.0
 itsdangerous==1.1.0
-Jinja2==2.10.1
+
 
 conda==4.10.1
 decorator
