@@ -4,7 +4,6 @@ attrs
 backcall 
 bleach 
 brotlipy==0.7.0
-Click==7.0
 
 
 
