@@ -11,11 +11,59 @@
      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
      "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
     },
+
+    {"tag": "oxygen",
+        "patterns": ["oxygen","oxygen cylinder","oxygen concentration","i need oxygen cylinder","i require oxygen in delhi","i need concentrator","oxygen needed", "oxygen cylinder needed","oxygen supply needed"],
+        "responses": ["Oxygen can be availed from https://covidfightclub.org/"]
+    },
+    {"tag": "plasma",
+        "patterns": ["plasma","plasma donor needed","plasma needed","O+ plasma donor","A+ plasma donor","B+ plasma donor","plasma donor required","2 units of O+ve #plasma NEEDED"],
+        "responses": ["Be a plasma donor or fetch plasma through https://dhoondh.com/ and https://plasmadonor.in/"]
+    },
+    {"tag": "beds",
+           "patterns": ["i require beds","i need oxygen beds","hospital nearby","hospital beds needed in delhi","bed required"],
+           "responses": ["Beds can be found through: https://covidamd.com/"]
+    },
+    {"tag": "ambulance",
+           "patterns": ["ambulance service needed","ambulance with oxygen required in delhi","ambulance with converter","ambulance with oxygen required"],
+           "responses": ["Refer to this link for ambulance service: https://warwithcovid.club/search?q=ambulance"]
+    },
+    {"tag": "vaccination",
+           "patterns": ["vaccination details","vaccine","vaccination slot","when can i get vaccinated","vaccine information ","vaccine spots","vaccine needed"],
+           "responses":["To book a slot and know about vaccination in India refer: https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html and https://www.bannerhealth.com/healthcareblog/teach-me/everything-to-know-about-covid-19-vaccinations"]
+    },
+    {"tag": "medicine",
+           "patterns": ["Fabiflu","Ivermectin","doxy", "olumiant", "medicine","injection","remedysever"],
+           "responses":["The medicine can be found at https://docs.google.com/spreadsheets/d/17bc83Sjnakb5DgsEQ7-lRj30-JVrIjSCcQuvwxB4Bc0/edit#gid=1864596547"]
+   
+    },
+    {"tag": "home quarantine",
+       "patterns": ["quarantine","home quarantine guideline","quarantine guideline", "provide quarantine guideline", "what is guideline for home quarantine","home quarantine assistance","how can i self quarantine?","protocalls about quarantine","tips for home quarantine"],
+       "responses":[" The patients who are clinically assigned to be mild /asymptomatic are recommended for home isolation. The govt of India gave a home quarantine guideline which can be found at: https://www.mohfw.gov.in/pdf/RevisedguidelinesforHomeIsolationofmildasymptomaticCOVID19cases.pdf"]
     
-    {"tag": "demand",
-    "patterns": ["I need ", "i request", "oxygen is needed", "wanted","i need","i want","oxygen","oxygen cylinder","ambulance","plasma","vaccine","required"],
-    "responses": ["Please go through these sites: "]
-    }
+     },
+     {"tag": "health",
+       "patterns": ["I need health care tips","health care","healthcare and fitness", "what should i eat during quarantine","how to maintain health","what can i do for health in covid","can i do exercise","what can i do for fitness in covid","is it ok to exercise in quarantine"],
+       "responses":["During covid, the patient should consume fresh fruits and vegetables and keep a check on salt and sugar intake. More details about health and fitness is available at: <a href=https://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/publications-and-technical-guidance/noncommunicable-diseases/stay-physically-active-during-self-quarantine  and   https://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/publications-and-technical-guidance/food-and-nutrition-tips-during-self-quarantine" ]
+     },
+     {"tag": "plasma guidlines",
+       "patterns": ["plasma guidelines","how can i donate plasma","quarantine guideline", "provide quarantine guideline", "what is guideline for home quarantine","home quarantine assistance"],
+       "responses":["Refer to the link to know about donating plasma https://www.donatingplasma.org/who"]
+    
+     },
+     {"tag": "covid updates ",
+       "patterns": ["What is covid","covid news","know about corona", "what is corona", "corona news","how does covid happen"],
+       "responses":["Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment. Know more about active cases,vaccinations, discharged and statewise distribution from https://www.mohfw.gov.in"]
+    
+     },
+     {"tag": "help someone with corona ",
+       "patterns": ["how can i help someone with covid","what to do when somone near you have covid","help family member with covid", "help friend with covid", "helping near ones with covid"],
+       "responses":["When someone around you have corona, help them to follow their doctor’s instructions for care and medicine and keep checking on them. More can be known from: https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/care-for-someone.html"]
+    
+     }
+
+
+
     
 ]
 }

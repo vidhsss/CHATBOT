@@ -9,6 +9,7 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
+from twe import twi 
 
 
 from tensorflow import keras
@@ -22,17 +23,22 @@ from tornado.escape import linkify
 with open("/Users/vipul1/Documents/GitHub/CHATBOT/intents.json") as file:
     intents= json.load(file)
 
-with open("/Users/vipul1/Documents/GitHub/CHATBOT/resource.json") as file:
-    resources = json.load(file)
-with open('/Users/vipul1/Documents/GitHub/CHATBOT/tokenizer.pickle', 'rb') as handle:
-    tokenizer1 = pickle.load(handle)
-with open('/Users/vipul1/Documents/GitHub/CHATBOT/label_encoder.pickle', 'rb') as enc:
-    lbl_encoder1 = pickle.load(enc)
+# with open("/Users/vipul1/Documents/GitHub/CHATBOT/resource.json") as file:
+#     resources = json.load(file)
+# with open('/Users/vipul1/Documents/GitHub/CHATBOT/tokenizer.pickle', 'rb') as handle:
+#     tokenizer1 = pickle.load(handle)
+# with open('/Users/vipul1/Documents/GitHub/CHATBOT/label_encoder.pickle', 'rb') as enc:
+#     lbl_encoder1 = pickle.load(enc)
 
 words = pickle.load(open('/Users/vipul1/Documents/GitHub/CHATBOT/words.pkl','rb'))
 classes = pickle.load(open('/Users/vipul1/Documents/GitHub/CHATBOT/classes.pkl','rb'))
-model_r= load_model('/Users/vipul1/Documents/GitHub/CHATBOT/chatbot_model_r.h5')
+# model_r= load_model('/Users/vipul1/Documents/GitHub/CHATBOT/chatbot_model_r.h5')
 max_len=20
+def cityy(sentence): 
+    cities=['Andhra Pradesh',' Assam',' Arunachal Pradesh',' Bihar',' Goa',' Gujarat',' Jammu and Kashmir',' Jharkhand',' West Bengal',' Karnataka',' Kerala',' Madhya Pradesh',' Maharashtra',' Manipur',' Meghalaya',' Mizoram',' Nagaland',' Orissa',' Punjab',' Rajasthan',' Sikkim',' Tamil Nadu',' Tripura',' Uttaranchal',' Uttar Pradesh',' Haryana',' Himachal Pradesh','  Chhattisgarh','andhra pradesh',' assam',' arunachal pradesh',' bihar',' goa',' gujarat',' jammu and kashmir',' jharkhand',' west bengal',' karnataka',' kerala',' madhya pradesh',' maharashtra',' manipur',' meghalaya',' mizoram',' nagaland',' orissa',' punjab',' rajasthan',' sikkim',' tamil nadu',' tripura',' uttaranchal',' uttar pradesh',' haryana',' himachal pradesh','chhattisgarh']
+    for city in cities: 
+        if city in sentence: 
+            return city
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -74,19 +80,39 @@ def getResponse(ints, intents_json):
             break
     return result
 def chatbot_response(text):
+    res3="."
+    res1=""
+    res=""
     ints = predict_class(text, model)
     res = getResponse(ints, intents)
-    res1=""
-    res2=""
-    tag=ints[0]['intent']
-    if tag=='demand':
-        result1 = model_r.predict(keras.preprocessing.sequence.pad_sequences(tokenizer1.texts_to_sequences([text]),
-                                             truncating='post', maxlen=max_len))
-        tag1 = lbl_encoder1.inverse_transform([np.argmax(result1)])
+    t=ints[0]['intent']
+    tags=['oxygen','beds','plasma','medicine','ambulance']
+    for tag in tags : 
+        if t==tag: 
+            city=cityy(text)
+            if city==None: 
+                city="delhi"
+            search_words = tag+" available verified"+city 
+            res3=twi(search_words)
+            
+            if res3==None: 
+                search_words = tag+ " available" +city
+                res3=twi(search_words)
+            if res3==None: 
+                res3=" no tweet found"
+            res3=str("Most recent twitter search: "+res3)
+            
+        # result1 = model_r.predict(keras.preprocessing.sequence.pad_sequences(tokenizer1.texts_to_sequences([text]),
+        #                                      truncating='post', maxlen=max_len))
+        # tag1 = lbl_encoder1.inverse_transform([np.argmax(result1)])
                     
-        for j in resources['intents']:
-            if j['tag']==tag1:
-             res2=(np.random.choice(j['responses']))
-    res1=res+res2   
+        # for j in resources['intents']:
+        #     if j['tag']==tag1:
+        # \\\\search_words = "#"+tag+"#available #delhi #verified"
+        # res3=twi(search_words)
+        #res2=(np.random.choice(j['responses']))
+        # res3="\nMost recent verified twitter search:\n"+ res3
+    # res="Please go through site: "+res   
+    res1=str(res+"\n"+ res3)
     return linkify(res1)
 print(chatbot_response(input("phrase")))

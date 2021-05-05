@@ -24,6 +24,10 @@
         "responses":["https://docs.google.com/spreadsheets/d/17bc83Sjnakb5DgsEQ7-lRj30-JVrIjSCcQuvwxB4Bc0/edit#gid=1864596547"]
 
     }
+        // {"tag": "demand",
+    // "patterns": ["I need ", "i request", "oxygen is needed", "wanted","i need","i want","oxygen","oxygen cylinder","ambulance","plasma","vaccine","required"],
+    // "responses": ["Please go through these sites: "]
+    // }
 ]
 
 }
