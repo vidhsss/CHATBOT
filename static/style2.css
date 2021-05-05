@@ -5,11 +5,11 @@
     --left-msg-bg: #9e9ba3;
     --right-msg-bg: #a067b6;
   }
-  
+
   html {
     box-sizing: border-box;
   }
-  
+
   *,
   *:before,
   *:after {
@@ -17,7 +17,7 @@
     padding: 0;
     box-sizing: inherit;
   }
-  
+
   body {
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@
     background-image: var(--body-bg);
     font-family: Helvetica, sans-serif;
   }
-  
+
   .msger {
     display: flex;
     flex-flow: column wrap;
@@ -40,7 +40,7 @@
     background: var(--msger-bg);
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
   }
-  
+
   .msger-header {
     /* display: flex; */
     font-size: medium;
@@ -51,7 +51,7 @@
     background: #eee;
     color: #666;
   }
-  
+
   .msger-chat {
     flex: 1;
     overflow-y: auto;
@@ -71,7 +71,7 @@
     align-items: flex-end;
     margin-bottom: 10px;
   }
-  
+
   .msg-img {
     width: 50px;
     height: 50px;
@@ -101,11 +101,11 @@
   .msg-info-time {
     font-size: 0.85em;
   }
-  
+
   .left-msg .msg-bubble {
     border-bottom-left-radius: 0;
   }
-  
+
   .right-msg {
     flex-direction: row-reverse;
   }
@@ -117,7 +117,7 @@
   .right-msg .msg-img {
     margin: 0 0 0 10px;
   }
-  
+
   .msger-inputarea {
     display: flex;
     padding: 10px;
@@ -146,8 +146,8 @@
   .msger-send-btn:hover {
     background: rgb(0, 180, 50);
   }
-  
+
   .msger-chat {
     background-color: #fcfcfe;
-    background-image: url("/Users/vipul1/Documents/GitHub/CHATBOT/deltabackground.jpg");
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   }
