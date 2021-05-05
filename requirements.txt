@@ -8,7 +8,7 @@ bleach
 
 
 
-conda==4.10.1
+conda==4.3.16
 decorator
 defusedxml 
 distlib==0.3.1
