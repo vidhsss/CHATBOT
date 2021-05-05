@@ -85,7 +85,6 @@ patsy==0.5.1
 pexpect @ file:///home/conda/feedstock_root/build_artifacts/pexpect_1602535608087/work
 pickleshare @ file:///home/conda/feedstock_root/build_artifacts/pickleshare_1602536217715/work
 Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1617888637212/work
-pipenv==2020.11.15
 prometheus-client @ file:///home/conda/feedstock_root/build_artifacts/prometheus_client_1617909193315/work
 prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1616432837031/work
 protobuf==3.15.8
