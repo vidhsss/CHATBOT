@@ -35,10 +35,33 @@ classes = pickle.load(open('/Users/vipul1/Documents/GitHub/CHATBOT/classes.pkl',
 # model_r= load_model('/Users/vipul1/Documents/GitHub/CHATBOT/chatbot_model_r.h5')
 max_len=20
 def cityy(sentence): 
-    cities=['Andhra Pradesh',' Assam',' Arunachal Pradesh',' Bihar',' Goa',' Gujarat',' Jammu and Kashmir',' Jharkhand',' West Bengal',' Karnataka',' Kerala',' Madhya Pradesh',' Maharashtra',' Manipur',' Meghalaya',' Mizoram',' Nagaland',' Orissa',' Punjab',' Rajasthan',' Sikkim',' Tamil Nadu',' Tripura',' Uttaranchal',' Uttar Pradesh',' Haryana',' Himachal Pradesh','  Chhattisgarh','andhra pradesh',' assam',' arunachal pradesh',' bihar',' goa',' gujarat',' jammu and kashmir',' jharkhand',' west bengal',' karnataka',' kerala',' madhya pradesh',' maharashtra',' manipur',' meghalaya',' mizoram',' nagaland',' orissa',' punjab',' rajasthan',' sikkim',' tamil nadu',' tripura',' uttaranchal',' uttar pradesh',' haryana',' himachal pradesh','chhattisgarh']
+    cities=['Andhra Pradesh',' Assam',' Arunachal Pradesh',' Bihar',' Goa',' Gujarat',' Jammu and Kashmir',' Jharkhand',' West Bengal',' Karnataka',' Kerala',' Madhya Pradesh',' Maharashtra',' Manipur',' Meghalaya',' Mizoram',' Nagaland',' Orissa',' Punjab',' Rajasthan',' Sikkim',' Tamil Nadu',' Tripura',' Uttaranchal',' Uttar Pradesh',' Haryana',' Himachal Pradesh','  Chhattisgarh','andhra pradesh',' assam',' arunachal pradesh',' bihar',' goa',' gujarat',' jammu and kashmir',' jharkhand',' west bengal',' karnataka',' kerala',' madhya pradesh',' maharashtra',' manipur',' meghalaya',' mizoram',' nagaland',' orissa',' punjab',' rajasthan',' sikkim',' tamil nadu',' tripura',' uttaranchal',' uttar pradesh',' haryana',' himachal pradesh','chhattisgarh','jaladhar','amritsar','bihar','jaipur','mumbai','banglore','hyderabad','kolkata','chennai','ahmedabad','surat','pune','lucknow','kanpur','indore','bhopal','vishakapatnam','ANDHRA PRADESH',' ASSAM',' ARUNACHAL PRADESH',' BIHAR',' GOA',' GUJARAT',' JAMMU AND KASHMIR',' JHARKHAND',' WEST BENGAL',' KARNATAKA',' KERALA',' MADHYA PRADESH',' MAHARASHTRA',' MANIPUR',' MEGHALAYA',' MIZORAM',' NAGALAND',' ORISSA',' PUNJAB',' RAJASTHAN',' SIKKIM',' TAMIL NADU',' TRIPURA',' UTTARANCHAL',' UTTAR PRADESH',' HARYANA',' HIMACHAL PRADESH','CHHATTISGARH','JALADHAR','AMRITSAR','BIHAR','JAIPUR','MUMBAI','BANGLORE','HYDERABAD','KOLKATA','CHENNAI','AHMEDABAD','SURAT','PUNE','LUCKNOW','KANPUR','INDORE','BHOPAL','VISHAKAPATNAM','delhi','DELHI','Delhi','Banglore','banglore','BANGLORE','Jaladhar','Amritsar','Bihar','Jaipur','Mumbai','Banglore','Hyderabad','Kolkata','Chennai','Ahmedabad','Surat','Pune','Lucknow','Kanpur','Indore','Bhopal','Vishakapatnam','patna','Patna','PATNA']
     for city in cities: 
         if city in sentence: 
             return city
+def tagg(tag,text): 
+    beds=['icu bed','oxygen bed','bed with oxygen','hospital bed','bed with icu ']
+    oxi=['oxygen cylinders', 'oxygen concentrators','oxygen cylinder','oxygen refill','oxygen concentrator','oxygen refills']
+    for o in oxi: 
+        if o in text: 
+            tag=o
+    for b in beds: 
+        if b in text: 
+            tag=b
+    city=cityy(text)
+    if city==None: 
+        res3= "Please provide the query with your state name to get most recent twitter search"
+    else:    
+        search_words = tag+" available verified"+city 
+        res3=twi(search_words)
+                
+        if res3==None: 
+            search_words = tag+" available "+city 
+            res3=twi(search_words)
+            if res3==None: 
+                res3=" no tweet found"
+                es3=str("Most recent twitter search: " +res3)
+    return res3
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -80,39 +103,18 @@ def getResponse(ints, intents_json):
             break
     return result
 def chatbot_response(text):
-    res3="."
+    res3=""
     res1=""
     res=""
     ints = predict_class(text, model)
     res = getResponse(ints, intents)
     t=ints[0]['intent']
-    tags=['oxygen','beds','plasma','medicine','ambulance']
+    text=text.lower()
+    tags=['oxygen ','beds','plasma','medicine','ambulance']
+    
     for tag in tags : 
         if t==tag: 
-            city=cityy(text)
-            if city==None: 
-                city="delhi"
-            search_words = tag+" available verified"+city 
-            res3=twi(search_words)
-            
-            if res3==None: 
-                search_words = tag+ " available" +city
-                res3=twi(search_words)
-            if res3==None: 
-                res3=" no tweet found"
-            res3=str("Most recent twitter search: "+res3)
-            
-        # result1 = model_r.predict(keras.preprocessing.sequence.pad_sequences(tokenizer1.texts_to_sequences([text]),
-        #                                      truncating='post', maxlen=max_len))
-        # tag1 = lbl_encoder1.inverse_transform([np.argmax(result1)])
-                    
-        # for j in resources['intents']:
-        #     if j['tag']==tag1:
-        # \\\\search_words = "#"+tag+"#available #delhi #verified"
-        # res3=twi(search_words)
-        #res2=(np.random.choice(j['responses']))
-        # res3="\nMost recent verified twitter search:\n"+ res3
-    # res="Please go through site: "+res   
+            res3=tagg(tag,text)
     res1=str(res+"\n"+ res3)
     return linkify(res1)
-print(chatbot_response(input("phrase")))
+
