@@ -3,7 +3,7 @@ async-generator
 attrs 
 backcall 
 bleach 
-brotlipy==0.7.0
+brotlipy
 
 
 
