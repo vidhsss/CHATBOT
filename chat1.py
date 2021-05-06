@@ -20,7 +20,7 @@ import random
 from tornado.escape import linkify
 
 
-with open("/Users/vipul1/Documents/GitHub/CHATBOT/intents.json") as file:
+with open("intents.json") as file:
     intents= json.load(file)
 
 # with open("/Users/vipul1/Documents/GitHub/CHATBOT/resource.json") as file:
@@ -30,8 +30,8 @@ with open("/Users/vipul1/Documents/GitHub/CHATBOT/intents.json") as file:
 # with open('/Users/vipul1/Documents/GitHub/CHATBOT/label_encoder.pickle', 'rb') as enc:
 #     lbl_encoder1 = pickle.load(enc)
 
-words = pickle.load(open('/Users/vipul1/Documents/GitHub/CHATBOT/words.pkl','rb'))
-classes = pickle.load(open('/Users/vipul1/Documents/GitHub/CHATBOT/classes.pkl','rb'))
+words = pickle.load(open('words.pkl','rb'))
+classes = pickle.load(open('classes.pkl','rb'))
 # model_r= load_model('/Users/vipul1/Documents/GitHub/CHATBOT/chatbot_model_r.h5')
 max_len=20
 def cityy(sentence): 
