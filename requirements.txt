@@ -135,7 +135,7 @@ tensorboard-plugin-wit
 tensorflow 
 
 tensorflow-estimator 
-tensorflow-macos 
+
 termcolor==1.1.0
 terminado 
 testpath==0.4.4 
