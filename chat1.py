@@ -101,12 +101,12 @@ def chatbot_response(text):
     res=""
     ints = predict_class(text, model)
     res = getResponse(ints, intents)
-    t=ints[0]['intent']
-    text=text.lower()
-    tags=['oxygen ','beds','plasma','medicine','ambulance']
-    
-    for tag in tags : 
-        if t==tag: 
+#    t=ints[0]['intent']
+#    text=text.lower()
+#    tags=['oxygen ','beds','plasma','medicine','ambulance']
+#    
+#    for tag in tags : 
+#        if t==tag: 
 #            res3=tagg(tag,text)
 #    res1=str(res+"\n"+ res3)
     return linkify(res)
