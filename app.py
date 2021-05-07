@@ -1,4 +1,4 @@
-from chat import chatbot_response
+from chat1 import chatbot_response
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
