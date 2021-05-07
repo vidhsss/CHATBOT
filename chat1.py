@@ -29,24 +29,24 @@ words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 # model_r= load_model('/Users/vipul1/Documents/GitHub/CHATBOT/chatbot_model_r.h5')
 max_len=20
-# def cityy(sentence): 
-#     cities=['Andhra Pradesh',' Assam',' Arunachal Pradesh',' Bihar',' Goa',' Gujarat',' Jammu and Kashmir',' Jharkhand',' West Bengal',' Karnataka',' Kerala',' Madhya Pradesh',' Maharashtra',' Manipur',' Meghalaya',' Mizoram',' Nagaland',' Orissa',' Punjab',' Rajasthan',' Sikkim',' Tamil Nadu',' Tripura',' Uttaranchal',' Uttar Pradesh',' Haryana',' Himachal Pradesh','  Chhattisgarh','andhra pradesh',' assam',' arunachal pradesh',' bihar',' goa',' gujarat',' jammu and kashmir',' jharkhand',' west bengal',' karnataka',' kerala',' madhya pradesh',' maharashtra',' manipur',' meghalaya',' mizoram',' nagaland',' orissa',' punjab',' rajasthan',' sikkim',' tamil nadu',' tripura',' uttaranchal',' uttar pradesh',' haryana',' himachal pradesh','chhattisgarh','jaladhar','amritsar','bihar','jaipur','mumbai','banglore','hyderabad','kolkata','chennai','ahmedabad','surat','pune','lucknow','kanpur','indore','bhopal','vishakapatnam','ANDHRA PRADESH',' ASSAM',' ARUNACHAL PRADESH',' BIHAR',' GOA',' GUJARAT',' JAMMU AND KASHMIR',' JHARKHAND',' WEST BENGAL',' KARNATAKA',' KERALA',' MADHYA PRADESH',' MAHARASHTRA',' MANIPUR',' MEGHALAYA',' MIZORAM',' NAGALAND',' ORISSA',' PUNJAB',' RAJASTHAN',' SIKKIM',' TAMIL NADU',' TRIPURA',' UTTARANCHAL',' UTTAR PRADESH',' HARYANA',' HIMACHAL PRADESH','CHHATTISGARH','JALADHAR','AMRITSAR','BIHAR','JAIPUR','MUMBAI','BANGLORE','HYDERABAD','KOLKATA','CHENNAI','AHMEDABAD','SURAT','PUNE','LUCKNOW','KANPUR','INDORE','BHOPAL','VISHAKAPATNAM','delhi','DELHI','Delhi','Banglore','banglore','BANGLORE','Jaladhar','Amritsar','Bihar','Jaipur','Mumbai','Banglore','Hyderabad','Kolkata','Chennai','Ahmedabad','Surat','Pune','Lucknow','Kanpur','Indore','Bhopal','Vishakapatnam','patna','Patna','PATNA']
-#     for city in cities: 
-#         if city in sentence: 
-#             return city
+def cityy(sentence): 
+    cities=['Andhra Pradesh',' Assam',' Arunachal Pradesh',' Bihar',' Goa',' Gujarat',' Jammu and Kashmir',' Jharkhand',' West Bengal',' Karnataka',' Kerala',' Madhya Pradesh',' Maharashtra',' Manipur',' Meghalaya',' Mizoram',' Nagaland',' Orissa',' Punjab',' Rajasthan',' Sikkim',' Tamil Nadu',' Tripura',' Uttaranchal',' Uttar Pradesh',' Haryana',' Himachal Pradesh','  Chhattisgarh','andhra pradesh',' assam',' arunachal pradesh',' bihar',' goa',' gujarat',' jammu and kashmir',' jharkhand',' west bengal',' karnataka',' kerala',' madhya pradesh',' maharashtra',' manipur',' meghalaya',' mizoram',' nagaland',' orissa',' punjab',' rajasthan',' sikkim',' tamil nadu',' tripura',' uttaranchal',' uttar pradesh',' haryana',' himachal pradesh','chhattisgarh','jaladhar','amritsar','bihar','jaipur','mumbai','banglore','hyderabad','kolkata','chennai','ahmedabad','surat','pune','lucknow','kanpur','indore','bhopal','vishakapatnam','ANDHRA PRADESH',' ASSAM',' ARUNACHAL PRADESH',' BIHAR',' GOA',' GUJARAT',' JAMMU AND KASHMIR',' JHARKHAND',' WEST BENGAL',' KARNATAKA',' KERALA',' MADHYA PRADESH',' MAHARASHTRA',' MANIPUR',' MEGHALAYA',' MIZORAM',' NAGALAND',' ORISSA',' PUNJAB',' RAJASTHAN',' SIKKIM',' TAMIL NADU',' TRIPURA',' UTTARANCHAL',' UTTAR PRADESH',' HARYANA',' HIMACHAL PRADESH','CHHATTISGARH','JALADHAR','AMRITSAR','BIHAR','JAIPUR','MUMBAI','BANGLORE','HYDERABAD','KOLKATA','CHENNAI','AHMEDABAD','SURAT','PUNE','LUCKNOW','KANPUR','INDORE','BHOPAL','VISHAKAPATNAM','delhi','DELHI','Delhi','Banglore','banglore','BANGLORE','Jaladhar','Amritsar','Bihar','Jaipur','Mumbai','Banglore','Hyderabad','Kolkata','Chennai','Ahmedabad','Surat','Pune','Lucknow','Kanpur','Indore','Bhopal','Vishakapatnam','patna','Patna','PATNA']
+    for city in cities: 
+        if city in sentence: 
+            return city
 def tagg(tag,text): 
-    # beds=['icu bed','oxygen bed','bed with oxygen','hospital bed','bed with icu ']
-    # oxi=['oxygen cylinders', 'oxygen concentrators','oxygen cylinder','oxygen refill','oxygen concentrator','oxygen refills']
-    # for o in oxi: 
-    #     if o in text: 
-    #         tag=o
-    # for b in beds: 
-    #     if b in text: 
-    #         tag=b
-    # city=cityy(text)
-    # if city==None: 
-    #     res3= "Please provide the query with your state name to get most recent twitter search"
-    # else:    
+    beds=['icu bed','oxygen bed','bed with oxygen','hospital bed','bed with icu ']
+    oxi=['oxygen cylinders', 'oxygen concentrators','oxygen cylinder','oxygen refill','oxygen concentrator','oxygen refills','oxygen cans','oxyegn can']
+    for o in oxi: 
+        if o in text: 
+            tag=o
+    for b in beds: 
+        if b in text: 
+            tag=b
+    city=cityy(text)
+    if city==None: 
+        res3= "Please provide the query with your state name to get most recent twitter search"
+    else:    
         search_words = tag+" available verified"  
         res3=twi(search_words)
                 
